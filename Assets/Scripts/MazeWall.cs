@@ -1,3 +1,3 @@
 ﻿using UnityEngine;
 
-public class MazeWall : MazeCellEdge { }
+public class MazeWall : MazeCellEdge {}

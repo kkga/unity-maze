@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-	public Maze mazePrefab;
-	private Maze mazeInstance;
+    public Maze mazePrefab;
 
-    void Start()
+    private Maze mazeInstance;
+
+    private void Start()
     {
         BeginGame();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -21,13 +20,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void BeginGame()
+    private void BeginGame()
     {
         mazeInstance = Instantiate(mazePrefab) as Maze;
         StartCoroutine(mazeInstance.Generate());
     }
 
-    void RestartGame()
+    private void RestartGame()
     {
         StopAllCoroutines();
         Destroy(mazeInstance.gameObject);
